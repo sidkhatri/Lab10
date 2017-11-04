@@ -56,6 +56,7 @@ public class CarApp {
 			System.out.println("Goodbye!");
 		}
 		scan.close();
+		scan2.close();
 	}
 
 	
