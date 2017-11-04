@@ -40,10 +40,10 @@ public class CarApp {
 		
 		System.out.println();
 	
-		Scanner scan2 = new Scanner(System.in);
+		Scanner scan2 = new Scanner(System.in); // this is required otherwise it will not be able to take in the additional input from user
 		
 		System.out.println("Would you like to buy this car? (y/n)");
-		buyChoice = scan.nextLine();
+		buyChoice = scan2.nextLine();
 		
 		
 		if(buyChoice.equalsIgnoreCase("Y")) {
@@ -51,6 +51,9 @@ public class CarApp {
 			carsList.remove((option -1)); 
 			System.out.println();
 			System.out.printf("%d. " + carsList.toString().replace("[", "").replace("]", "").replace(",", "") + "\n", counter++);
+		}
+		else {
+			System.out.println("Goodbye!");
 		}
 		scan.close();
 	}
