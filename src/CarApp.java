@@ -11,10 +11,6 @@ public class CarApp {
 	public static void main(String[] args) {
 		int option = 0;
 		String buyChoice = "";
-		String make = "";
-		String model = "";
-		int year = 0;
-		double price = 0.00;
 		Scanner scan = new Scanner(System.in);
 		System.out.println("Welcome to the Grand Circus Motors admin console!");
 		System.out.println();
@@ -32,9 +28,7 @@ public class CarApp {
 		int counter = 1;
 		System.out.printf("%d. " + carsList.toString().replace("[", "").replace("]", "").replace(",", "") + "\n", counter++);
 		
-		
-		System.out.println("Which car would you like? (1-7)");
-		option = scan.nextInt();
+		option = Validator.getInt(scan,"Which car would you like? (1-7)", 1, 7);
 		
 		System.out.println(carsList.get(option - 1)); //prints out the car the user has selected.
 		
@@ -45,11 +39,12 @@ public class CarApp {
 		System.out.println("Would you like to buy this car? (y/n)");
 		buyChoice = scan2.nextLine();
 		
-		
+		//This removes the car the user selected from the car lot and it displays the new list 
 		if(buyChoice.equalsIgnoreCase("Y")) {
 			System.out.println("Excellent! Our finance department will be in touch with you shortly.");
 			carsList.remove((option -1)); 
 			System.out.println();
+			System.out.println("Current Inventory:");
 			System.out.printf("%d. " + carsList.toString().replace("[", "").replace("]", "").replace(",", "") + "\n", counter++);
 		}
 		else {
