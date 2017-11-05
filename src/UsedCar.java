@@ -1,20 +1,20 @@
 /*
  * @author Siddique Khatri -- created on 11/4/2017
  */
-public class UsedCar extends Car{
+public class UsedCar extends Car {
 	private double mileage;
 	private String make;
 	private String model;
 	private int year;
 	private double price;
 	private String used = "(Used)";
-	
-	//No-arguments constructor
+
+	// No-arguments constructor
 	public UsedCar() {
-		
+
 	}
 
-	//overloaded constructor
+	// overloaded constructor
 	public UsedCar(String make, String model, int year, double price, String used, double mileage) {
 		this.make = make;
 		this.model = model;
@@ -24,7 +24,7 @@ public class UsedCar extends Car{
 		this.mileage = mileage;
 	}
 
-	//all of my getters and setters
+	// all of my getters and setters
 	public double getMileage() {
 		return mileage;
 	}
@@ -72,18 +72,13 @@ public class UsedCar extends Car{
 	public void setPrice(double price) {
 		this.price = price;
 	}
-	
-	
-	
-	
+
 	@Override
 	public String toString() {
-		
-		return ("	" + make  + "		"  + model + "\t		" +   year + "\t		" + "$" +  price + used + mileage + "\n");
-		
+
+		return ("	" + make + "		" + model + "\t		" + year + "\t		" + "$" + price + used + mileage
+				+ "\n");
+
 	}
 
-	
-	
-	
 }
